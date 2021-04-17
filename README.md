@@ -27,3 +27,48 @@ CRUD Spring MVC приложение для взимодействия с объ
 ----
 ## Технологии
 Spring MVC, AOP, Hibernate, Lombok, Maven, JSP, MySQL, Apache Tomcat 9.
+
+---
+
+## Запуск
+
+1. Подготовить БД и таблицу
+   
+   Создаем таблицу `employees` в БД с нужными полями:
+
+```sql
+USE your_db;
+
+CREATE TABLE employees (
+  id int NOT NULL AUTO_INCREMENT,
+  name varchar(15),
+  surname varchar(25),
+  department varchar(20),
+  salary int,
+  PRIMARY KEY (id)
+) ;
+
+INSERT INTO your_db.employees (name, surname, department, salary)
+VALUES
+	('Maksim', 'Reus', 'IT', 500),
+	('Oleg', 'Ivanov', 'Sales', 700),
+	('Nina', 'Sidorova', 'HR', 850);
+```        
+
+
+2. Клонировать репозиторий `$ git clone https://github.com/NikitaKorochkin/CRUD.git'`  
+
+3. Открыть проект в IDE. Ввести данные в `applicationContext.xml`
+
+![xml](screenshots/xml.png)
+
+4. Настроить Apache Tomcat 
+ 
+   Данный проект запускался на 9 версии Tomcat
+
+5. Старт сервера из IDE
+
+   После успешного старта вы окажетесь на странице, описанной во view `all-employees.jsp`,
+   если этого не произошло введите этот адрес вручную http://localhost:8080/spring_course_mvc_hibernate/  
+
+
